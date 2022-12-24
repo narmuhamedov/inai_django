@@ -7,17 +7,36 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='ManClothing',
+            name="ManClothing",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=60)),
-                ('image', models.ImageField(upload_to='')),
-                ('type_clothing', models.CharField(choices=[('Jeans', 'Jeans'), ('T-Shirt', 'T-Shirt'), ('Houdey', 'Houdey'), ('Pullower', 'Pullower'), ('Suit', 'Suit')], max_length=60)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=60)),
+                ("image", models.ImageField(upload_to="")),
+                (
+                    "type_clothing",
+                    models.CharField(
+                        choices=[
+                            ("Jeans", "Jeans"),
+                            ("T-Shirt", "T-Shirt"),
+                            ("Houdey", "Houdey"),
+                            ("Pullower", "Pullower"),
+                            ("Suit", "Suit"),
+                        ],
+                        max_length=60,
+                    ),
+                ),
             ],
         ),
     ]

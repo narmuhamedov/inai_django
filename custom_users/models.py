@@ -1,30 +1,30 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+ADMIN = 1
+VIPClient = 2
+CLIENT = 3
+
+USER_TYPE = (
+    (ADMIN, "Admin"),
+    (VIPClient, "VipClient"),
+    (CLIENT, 'Client')
+)
+
+MALE = 1
+FEMALE = 2
+
+GENDER_TYPE = (
+    (MALE, "MAN"),
+    (FEMALE, "WOMAN")
+)
+
 class CustomUser(User):
     class Meta:
-        verbose_name='User'
-        verbose_name_plural='Users'
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
 
-    ADMIN = 1
-    VipClient = 2
-    Client = 3
-    USER_TYPE = (
-        (ADMIN, 'ADMIN'),
-        (VipClient, "VipClient"),
-        (Client, 'Client')
-    )
-
-    MALE = 1
-    FEMALE = 2
-    OTHER = 3
-    GENDER_TYPE = (
-        (MALE, 'MALE'),
-        (FEMALE, "FEMALE"),
-        (OTHER, 'OTHER')
-    )
-
-    user_type = models.IntegerField(choices=USER_TYPE, verbose_name='Тип Пользователя', default=Client)
-    phone_number = models.CharField(max_length=50)
+    user_type = models.IntegerField(choices=USER_TYPE, verbose_name='Тип пользователя')
+    phone_number = models.CharField('номер телефона', max_length=100)
     age = models.PositiveIntegerField()
-    gender = models.IntegerField(choices=GENDER_TYPE, verbose_name='Гендер')
+    gender = models.IntegerField(choices=GENDER_TYPE, verbose_name='Пол')

@@ -7,20 +7,40 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='TvShow',
+            name="TvShow",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-                ('image', models.ImageField(upload_to='')),
-                ('quantity', models.IntegerField()),
-                ('trailer', models.URLField()),
-                ('genre', models.CharField(choices=[('HORROR', 'HORROR'), ('ANIME', 'ANIME'), ('COMEDY', 'COMEDY'), ('FANTASY', 'FANTASY'), ('ROMANTIC', 'ROMANTIC'), ('DRAMMA', 'DRAMMA')], max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=100)),
+                ("description", models.TextField()),
+                ("image", models.ImageField(upload_to="")),
+                ("quantity", models.IntegerField()),
+                ("trailer", models.URLField()),
+                (
+                    "genre",
+                    models.CharField(
+                        choices=[
+                            ("HORROR", "HORROR"),
+                            ("ANIME", "ANIME"),
+                            ("COMEDY", "COMEDY"),
+                            ("FANTASY", "FANTASY"),
+                            ("ROMANTIC", "ROMANTIC"),
+                            ("DRAMMA", "DRAMMA"),
+                        ],
+                        max_length=100,
+                    ),
+                ),
             ],
         ),
     ]
