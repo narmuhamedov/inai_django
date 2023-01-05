@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "clothing",
     "parser",
     "custom_users",
+    'product',
 ]
 
 MIDDLEWARE = [
